@@ -8,6 +8,7 @@
  $id_number = $_POST['idnumber'];
  $e_mail = $_POST['email'];
  $p_wd = $_POST['passwd'];
+ $enc_pass=password_hash($p_wd, PASSWORD_DEFAULT);
  //Step 3.
  $query = "
  INSERT INTO users (
@@ -23,7 +24,7 @@
  '$m_number',
  '$id_number',
  '$e_mail',
- '$p_wd'
+ '$enc_pass'
  )
  ";
  //Step 4.
