@@ -9,6 +9,13 @@
  $e_mail = $_POST['email'];
  $p_wd = $_POST['passwd'];
  $enc_pass=password_hash($p_wd, PASSWORD_DEFAULT);
+
+ $check_email="select u.email from user u where email='$e_mail' limit 1";
+  $res_check = pg_query($connection,$check_email );
+  if(pg_num_rows($res_check)>0){
+   echo"<script>alert('Usert alredy exists !!')</script>";
+   header('refresh:0; url =signin.html');
+  }else{
  //Step 3.
  $query = "
  INSERT INTO users (
@@ -31,9 +38,15 @@
  $res = pg_query($connection, $query);
 
  //Step 5. Validation
- if(!$res){
-    echo "User has been created successfully !!!";
+ if($res){
+    //echo "User has been created successfully !!!";
+    echo "<script>alert('Succes !!!Go to login')</script>";+
+    header('refresh:0; url =signin.html');
  } else {
     echo "Something wrong";
  }
+
+  }
+
+ 
 ?>
