@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Form</title>
+</head>
+<body>
+
+  <form name="register-form" action="Countries.php" method="POST">
+    <table border="1" align="center" cellpadding="8">
+      <tr>
+        <td><label for="idcou">ID Country</label></td>
+        <td><input type="text" name="idcou" id="idcou" required></td>
+      </tr>
+
+      <tr>
+        <td><label for="couname">Name Country</label></td>
+        <td><input type="text" name="couname" id="couname" required></td>
+      </tr>
+
+      <tr>
+        <td><label for="couabbre">Abbreviation</label></td>
+        <td><input type="text" name="couabbre" id="couabbre" required></td>
+      </tr>
+
+      <tr>
+        <td colspan="2" align="center">
+          <button type="submit">Register</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+
+</body>
+</html>

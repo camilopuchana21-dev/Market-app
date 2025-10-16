@@ -23,6 +23,8 @@ dbname=$supa_dbname
 port=$supa_port
 ";
 
+
+
 $local_data_connection="
 host=$local_host
 user=$local_user

@@ -15,6 +15,23 @@ CREATE TABLE users(
 
 
 );
-
 insert into users(firstname, lastname, mobile_number, email, password) 
 values('Joan C','Ayala','465133','joan@mail.com','1234');
+
+
+
+
+CREATE TABLE countri(
+            id-conuntri BIGSERIAL PRIMARY KEY,
+            Name_countri VARCHAR(30) NOT NULL,
+            Abbre VARCHAR(15) not NULL,
+            status BOOLEAN NOT NULL DEFAULT TRUE,
+            created at TIMESTAMPtZ NOT NULL DEFAULT now(),
+            updated at TIMESTAMPtZ NOT NULL DEFAULT now(),
+            deleted at TIMESTAMPtZ NULL
+
+
+);
+
+
+
