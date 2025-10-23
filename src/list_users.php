@@ -24,29 +24,48 @@
  <td> Options</td> 
 </tr>
 <?php
-sql_users="
-//
+$sql_users="
+select u.firstname||''||u.lastname as fullname,
+u.email,
+u.ide_number,
+u.mobile_number,
+case 
+	when u.status =true then 'Active'else 'Inactive'
+	end as status
+
+from users u 
 ";
-
-
-?>
-<tr>
-<td> Camilo</td>
+$resul=pg_query($local_connection,$sql_users);
+if(!$resul){
+    die("ERROR".pg_last_error())
+}
+while($row =pg_fetch_assoc($resul)){
+  echo"
+  <tr>
+<td>"$row['fullname']."</td>
 <td> camilo@gmail.com</td>
  <td>3333333333</td>
  <td>111111111</td>  
  <td> Active</td> 
  <td> 
-<a href="#">
-    <img src= "icons/lupa.png"width="20">
+<a href='#'>
+    <img src= 'icons/lupa.png'width='20'>
 </a>
-<a href="#">Update</a>
-<a href="#">Delete</a>
+<a href='#'>Update</a>
+<a href='#'>Delete</a>
  </td> 
 
 
 
 </tr>
+  
+  
+  
+  "  
+}
+
+
+
 </table>
 </body>
 </html>

@@ -25,7 +25,7 @@
    
 
    if(pg_num_rows($res_check)>0){
-      echo"<script>alert('User alredy exists !!')</script>";+
+      echo"<script>alert('User alredy exists !!')</script>";
       header('refresh:0; url =region.html');
    }else{
       //Step 3.
