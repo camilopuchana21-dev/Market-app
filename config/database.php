@@ -32,14 +32,14 @@ password=$local_password
 dbname=$local_dbname
 port=$local_port
 ";
-$supa_connection=Pg_connect($supa_data_connection);
+//$supa_connection=Pg_connect($supa_data_connection);
 $local_connection=Pg_connect($local_data_connection);
-if(!$supa_connection){
+/*if(!$supa_connection){
     //echo"error";
 }
 else{
 echo"connetion suces";
-}
+}*/
 
 if(!$local_connection){
     echo"error";
