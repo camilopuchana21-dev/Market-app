@@ -55,7 +55,7 @@ while($row =pg_fetch_assoc($resul)){
  <td> 
 <a href='#'><img src= 'icons/lupa.png'width='20'></a>
 <a href='delete_users.php?userId=".$row['user_id']."'><img src= 'icons/eliminar.png'width='20'></a>
-<a href ='#'><img src= 'icons/update.jpg'width='20'></a>
+<a href ='edit_user_form.php?userId=".$row['user_id']."'><img src= 'icons/update.jpg'width='20'></a>
  </td> 
 </tr> 
   " ; 
