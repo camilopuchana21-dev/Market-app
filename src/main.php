@@ -1,6 +1,9 @@
 <?php
 
-echo"welcom"
+  session_start();
+   if(isset($_SESSION('session_user_id'))){
+     header('refresh:0; url =singnin.php');
+   }
 
 
 ?>
@@ -19,6 +22,9 @@ echo"welcom"
     
 </head>
 <body>
+    <center><h6><b> User:</b> here print your name</center>
     
+    <a href="longout.php"> longout</a> |
+    <a href="list_users.php"> list all users</a> 
 </body>
 </html>

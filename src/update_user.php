@@ -16,7 +16,7 @@
         where
             id = $user_id
     ";
-    $result = pg_query($conn_local, $sql_update_user);
+    $result = pg_query($local_connection, $sql_update_user);
 
     if($result){
             //echo "User has been created successfully !!!";

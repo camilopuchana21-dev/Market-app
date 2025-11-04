@@ -25,20 +25,33 @@ $lname=$row['lastname'];
 </head>
 <body>
 
- <form name="edit_user_form" aciton ="update_data.php" method="post">
-   <tr><td><label>ide_number</label><tr><td>
-<tr><td><input type="text" name= "ide_numbe" value="<?php echo "$ide_number" ?>" readonly required/> <tr><td> 
-    <tr><td><input type="text" name= "ide" value="<?php echo "  $user_id" ?>" readonly required/> <tr><td> 
-<tr><td><label>firstname</label><tr><td>
-<tr><td><input type="text" name= "fname" value="<?php echo "$fname" ?>" required/><tr><td>
-<tr><td><label>last name</label><tr><td>
-<tr><td><input type="text" name= "lname" value="<?php echo "$lname" ?>" required/><tr><td>
-
- <tr><td><button>update</button> </td></tr>
-
- 
-</form>   
-
+<center><form name="edit-user-form" action = "update_user.php" method = "post">   
+        <input 
+            type="hidden"
+            name="iduser" 
+            value="<?php echo $user_id ?>"
+            readonly>
+        <labelasd>Identification number: </label>
+        <input 
+            type="text" 
+            name="idenumber" aa
+            value="<?php echo $ide_number ?>"
+            readonlyaaa
+            required /><br><br>
+        <label>Firstname: </label>
+        <input 
+            type="text" 
+            name="fname" 
+            value="<?php echo $fname ?>"
+            required /><br><br>
+        <label>Lastname: </label>
+        <input 
+            type="text" 
+            name="lname" 
+            value="<?php echo $lname ?>"
+            required /><br><br>
+        <button>Update user</button>
+    </form></form> 
 
 
 

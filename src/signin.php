@@ -1,6 +1,14 @@
 <?php
   //Step 1. get database connection
    require('../config/database.php');
+   
+   //crete session 
+   session_start();
+   if(isset($_SESSION[ 'session_user_id'])){
+     header('refresh:0; url =main.php');
+   }else{
+    header('refresh:0; url =Error_403.html');
+   }
 
    //Step 2. get form-data
    $e_mail =trim($_POST['email']);
@@ -14,6 +22,8 @@
 
 $sql_chenk_user= " 
 select 
+u.id,
+u.firstname || ' ' ||u.lastname as fullname,
  u.email,
  u.password
 from 
@@ -24,11 +34,15 @@ where
 limit 1
 
 ";
-$res_check=pg_query($supa_connection, $sql_chenk_user);
+$res_check=pg_query($local_connection, $sql_chenk_user);
+
+$row =pg_fetch_assoc($res_check)
+$_SESSION['session_user_id']=$row['id'];
+$_SESSION['session_user_fullname']=$row['fullname'];
   if(pg_num_rows($res_check)>0){
-      echo" user exists.Go to main page !!";+
+     // echo" user exists.Go to main page !!";+
  header('refresh:0; url =main.php');
 
   }else{
-    echo"verify data";
+    echo "verify data";
   }
