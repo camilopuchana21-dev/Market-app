@@ -23,7 +23,7 @@
       limit 1"
    ;
 
-   $res_check = pg_query($supa_connection,$check_email );
+   $res_check = pg_query($local_connection,$check_email );
    
 
    if(pg_num_rows($res_check)>0){
@@ -49,7 +49,7 @@
       )";
 
       //Step 4.
-      $res = pg_query($supa_connection, $query);
+      $res = pg_query($local_connection, $query);
 
       //Step 5. Validation
       if($res){

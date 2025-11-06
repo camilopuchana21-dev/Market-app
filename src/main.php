@@ -1,14 +1,12 @@
 <?php
 
   session_start();
-   if(isset($_SESSION('session_user_id'))){
-     header('refresh:0; url =singnin.php');
+   if(isset($_SESSION[ 'session_user_id'])){
+     header('refresh:0; url =signin.php');
    }
 
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -22,7 +20,7 @@
     
 </head>
 <body>
-    <center><h6><b> User:</b> here print your name</center>
+    <center><h6><b> User:</b> <?php echo $_SESSION['session_user_fullname'];?></center>
     
     <a href="longout.php"> longout</a> |
     <a href="list_users.php"> list all users</a> 
