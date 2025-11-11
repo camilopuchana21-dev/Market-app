@@ -50,6 +50,7 @@ $lname=$row['lastname'];
             name="lname" 
             value="<?php echo $lname ?>"
             required /><br><br>
+          <label> User photo<label><br> <imput type="file" name ="photo_user"><br>
         <button>Update user</button>
     </form></form> 
 

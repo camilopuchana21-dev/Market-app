@@ -1,13 +1,13 @@
 <?php
    //Step 1. get database connection
    require('../config/database.php');
-      session_start();
+   /*   session_start();
    if(isset($_SESSION[ 'session_user_id'])){
      header('refresh:0; url =main.php');
    }else{
     header('refresh:0; url =Error_403.html');
    }
-
+*/
 ?>
 
 
@@ -32,6 +32,7 @@
  <td>ide.Number</td>
  <td>Phone Number</td>  
  <td> Status</td> 
+ <td> Photo</dt>
  <td> Options</td> 
 </tr>
 <?php
@@ -44,7 +45,8 @@ u.ide_number,
 u.mobile_number,
 case 
 	when u.status =true then 'Active'else 'Inactive'
-	end as status
+	end as status,
+  u.url_photo
 from users u 
 ";
 $resul=pg_query($local_connection,$sql_users);
@@ -59,6 +61,7 @@ while($row =pg_fetch_assoc($resul)){
  <td>".$row['ide_number']."</td>
  <td>".$row['mobile_number']."</td>  
  <td>".$row['status']."</td> 
+ <td><img src= ".$row['url_photo'] ." width='30'></td>
  <td> 
 <a href='#'><img src= 'icons/lupa.png'width='20'></a>
 <a href='delete_users.php?userId=".$row['user_id']."'><img src= 'icons/eliminar.png'width='20'></a>
