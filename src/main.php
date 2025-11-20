@@ -20,7 +20,19 @@
     
 </head>
 <body>
-    <center><h6><b> User:</b> <?php echo $_SESSION['session_user_fullname'];?></center>
+  <table>
+
+
+
+   <table border= "0" align ="center">
+    <tr>
+    <b>User: </b>
+    <td><?php echo $_SESSION['session_user_fullname']; ?>
+    <td><?php echo "<img src='" .$_SESSION['session_user_url_photho']."' width='30'>";?></td>
+    
+</td>
+    </tr>
+</table>
     
     <a href="longout.php"> longout</a> |
     <a href="list_users.php"> list all users</a> 

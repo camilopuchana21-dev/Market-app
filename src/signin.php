@@ -11,8 +11,8 @@
    //}
 
    //Step 2. get form-data
-   $e_mail =trim($_POST['email']);
-   $p_wd = trim($_POST['passwd']);
+  $e_mail = trim($_POST['email']);
+  $p_wd = trim($_POST['passwd']);
 
 
  //    $enc_pass=password_hash($p_wd, PASSWORD_DEFAULT);
@@ -25,7 +25,8 @@ select
 u.id,
 u.firstname || ' ' ||u.lastname as fullname,
  u.email,
- u.password
+ u.password,
+ u.url_photo
 from 
 users u
 where 
@@ -39,6 +40,7 @@ $res_check=pg_query($local_connection, $sql_chenk_user);
 $row =pg_fetch_assoc($res_check);
 $_SESSION['session_user_id']=$row['id'];
 $_SESSION['session_user_fullname']=$row['fullname'];
+$_SESSION['session_user_url_photho']=$row['url_photo'];
   if(pg_num_rows($res_check)>0){
      // echo" user exists.Go to main page !!";+
  header('refresh:0;url=main.php');
